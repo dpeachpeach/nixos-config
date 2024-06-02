@@ -8,7 +8,7 @@
 	systemd.timers."reboot-script" = {
 	  wantedBy = [ "timers.target" ];
 	    timerConfig = {
-		OnCalendar = "*-*-* 00/2:00:00"
+		OnCalendar = "*-*-* 00/2:00:00";
 	    };
 	};
 
