@@ -37,7 +37,8 @@
         home = "/home/david";
         extraGroups = ["networkmanager" "wheel"];
         openssh.authorizedKeys.keys = with (import ../../modules/ssh.nix); [ 
-	macbook
+		macbook
+		david-nuc
 	];
   };
 
@@ -55,6 +56,9 @@
 		};
 	};
   };
+
+  programs.ssh.startAgent = true;
+  services.gnome.gnome-keyring.enable = true;
 
   system.stateVersion = "23.11"; # Did you read the comment?
 

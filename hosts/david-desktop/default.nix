@@ -13,6 +13,8 @@
   
   # systemd-boot configuration
   boot.loader.systemd-boot.editor = false;
+
+  programs.ssh.startAgent = true;
   
   # turn off sleeping
   powerManagement.enable = false;
