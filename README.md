@@ -6,11 +6,8 @@
 |           My NixOS config!      |
  ￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣
 ```
-### Notes
-- This is a very rough first draft.
 
 ### TODO
-- Set up my NUC's config before I fly to Boston for my internship in 10 hours
 - Set up my dad's user account so my house is windows-free
 - Neovim config
 - Set up global cargo
