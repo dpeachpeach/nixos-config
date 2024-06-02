@@ -18,6 +18,7 @@
 				modules = [
 					./hosts/david-desktop
 					./modules/common-settings.nix
+					./modules/remote-server.nix
 
 					home-manager.nixosModules.home-manager
 					{
@@ -32,6 +33,7 @@
 				modules = [
 					 ./hosts/david-nuc
 					 ./modules/common-settings.nix
+					 ./modules/remote-server.nix
 
 					home-manager.nixosModules.home-manager
 					{
