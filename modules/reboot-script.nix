@@ -13,12 +13,9 @@
 	};
 
 	systemd.services."reboot-script" = {
-	  script = ''
-		reboot
-	  '';
 	  serviceConfig = {
 	    Type = "oneshot";
-	    User = "root";
+	    ExecStart = "${pkgs.systemd}/bin/systemctl reboot";
 	  };
 	};
 
