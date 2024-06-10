@@ -14,8 +14,6 @@
   # systemd-boot configuration
   boot.loader.systemd-boot.editor = false;
 
-  programs.ssh.startAgent = true;
-  
   # turn off sleeping
   powerManagement.enable = false;
 
@@ -31,13 +29,6 @@
   # Base system packages i want to install.
   environment.systemPackages = with pkgs; [
      tailscale #remote server
-     waybar
-     dunst
-     libnotify
-     swww
-     alacritty
-     rofi-wayland
-     firefox
   ];
 
   ## Graphics: I have a Nvidia GPU on my desktop so I need to allow unfree + configure
@@ -61,34 +52,6 @@
 
   };
 
-	## GUI
-	services.xserver = {
-		enable = true;
-		videoDrivers = ["nvidia"];
-		displayManager.gdm = {
-			enable = true;
-			wayland = true;
-		};
-	};
-	programs.hyprland = {
-		enable = true;
-		xwayland.enable = true;
-	};
-
-	environment.sessionVariables = {
-		WLR_NO_HARDWARE_CURSORS = "1";
-		NIXOS_OZONE_WL = "1";
-	};
-	
-	xdg.portal.enable = true;
-	xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-gtk];
-
-	## Sound
-
-	sound.enable = true;
-	security.rtkit.enable = true;
-
-
 
   ## Users TODO: add tati
   users.users.david = {
@@ -100,22 +63,6 @@
         openssh.authorizedKeys.keys = with (import ../../modules/ssh.nix); [ 
 	macbook
 	];
-  };
-
-  ## Remote connectivity controls
-  services = {
-	tailscale = {
-	enable = true;
-	port = 41641;
-	openFirewall = true;
-	};
-	openssh = {
-	enable = true;
-	settings = {
-		PasswordAuthentication = false;
-	};
-
-	};
   };
 
   system.stateVersion = "23.11"; # Did you read the comment?

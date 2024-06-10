@@ -16,6 +16,8 @@
 		};
 	  };
 
+
+	## Set up SSH keys
 	  programs.ssh.startAgent = true;
 	  services.gnome.gnome-keyring.enable = true;
 }

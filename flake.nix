@@ -19,6 +19,7 @@
 					./hosts/david-desktop
 					./modules/common-settings.nix
 					./modules/remote-server.nix
+					./modules/reboot-script.nix
 
 					home-manager.nixosModules.home-manager
 					{
@@ -34,7 +35,6 @@
 					 ./hosts/david-nuc
 					 ./modules/common-settings.nix
 					 ./modules/remote-server.nix
-					 ./modules/reboot-script.nix
 
 					home-manager.nixosModules.home-manager
 					{

@@ -1,14 +1,14 @@
 { pkgs, inputs, config, ... }:
 
+# This script is currently defunct, as I figured out the issue that required its usage
+# I'm keeping it here because I would like to set up a policy that reboots every few days or so.
+
 {
-	# This is because I forgot to remove sleep from 
-	# the BIOS and I'm hacking together a solution while I'm in
-        # Boston for my internship. This reboots the NUC every 2 hours.
 
 	systemd.timers."reboot-script" = {
 	  wantedBy = [ "timers.target" ];
 	    timerConfig = {
-		OnCalendar = "*-*-* 00/2:00:00";
+		OnCalendar = "Mon *-*-* 00:00:00";
 	    };
 	};
 
